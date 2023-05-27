@@ -30,6 +30,12 @@ services:
           "      - localhost\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
+          "  - name: kibana\n"\
+          "    dns:\n"\
+          "      - kibana\n"\
+          "      - localhost\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
           "  - name: apm\n"\
           "    dns:\n"\
           "      - apm\n"\
@@ -120,12 +126,15 @@ services:
       - ELASTIC_APM_ACTIVE=false #NOVO
       - ELASTIC_APM_SERVER_URL=https://apm:8200 #NOVO
       - ELASTIC_APM_VERIFY_SERVER_CERT=false #NOVO
+      - SERVER_SSL_CERTIFICATE=config/certs/kibana/kibana.crt #NOVO
+      - SERVER_SSL_KEY=config/certs/kibana/kibana.key #NOVO
+      - SERVER_SSL_ENABLED=true #NOVO
     mem_limit: 512m #NOVO
     healthcheck:
       test:
         [
           "CMD-SHELL",
-          "curl -s -I http://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
+          "curl -s -I --cacert config/certs/ca/ca.crt https://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
         ]
       interval: 10s
       timeout: 10s
