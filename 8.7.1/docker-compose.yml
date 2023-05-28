@@ -90,7 +90,7 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: 1gb #NOVO
+    mem_limit: 1280m #NOVO
     ulimits:
       memlock:
         soft: -1
@@ -165,7 +165,7 @@ services:
          -E apm-server.ssl.key=config/certs/apm/apm.key
          -E apm-server.ssl.verification_mode=none
          -E apm-server.auth.secret_token=${APM_SECRET_TOKEN}
-    mem_limit: 512m
+    mem_limit: 256m
 
 volumes:
   certs:
