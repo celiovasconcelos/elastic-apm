@@ -90,7 +90,7 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: 1gb #NOVO
+    mem_limit: 1536m #NOVO
     ulimits:
       memlock:
         soft: -1
@@ -129,7 +129,7 @@ services:
       - SERVER_SSL_CERTIFICATE=config/certs/kibana/kibana.crt #NOVO
       - SERVER_SSL_KEY=config/certs/kibana/kibana.key #NOVO
       - SERVER_SSL_ENABLED=true #NOVO
-    mem_limit: 512m #NOVO
+    mem_limit: 1gb #NOVO
     healthcheck:
       test:
         [
