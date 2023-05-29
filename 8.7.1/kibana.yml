@@ -1,5 +1,5 @@
 server.host: 0.0.0.0
-server.publicBaseUrl: infraops.work
+server.publicBaseUrl: https://infraops.work
 status.allowAnonymous: true
 monitoring.ui.container.elasticsearch.enabled: true
 telemetry.enabled: false
