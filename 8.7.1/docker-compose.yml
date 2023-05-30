@@ -90,7 +90,7 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: 1536m #NOVO
+    mem_limit: 2gb #NOVO
     ulimits:
       memlock:
         soft: -1
