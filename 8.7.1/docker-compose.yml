@@ -90,7 +90,7 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: 2gb #NOVO
+    mem_limit: 2gb #NEW
     ulimits:
       memlock:
         soft: -1
@@ -114,7 +114,7 @@ services:
     volumes:
       - certs:/usr/share/kibana/config/certs
       - kibanadata:/usr/share/kibana/data
-      - ./kibana.yml:/usr/share/kibana/config/kibana.yml #NOVO
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml #NEW
     ports:
       - ${KIBANA_PORT}:5601
     environment:
@@ -123,13 +123,13 @@ services:
       - ELASTICSEARCH_USERNAME=kibana_system
       - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
       - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
-      - ELASTIC_APM_ACTIVE=false #NOVO
-      - ELASTIC_APM_SERVER_URL=https://apm:8200 #NOVO
-      - ELASTIC_APM_VERIFY_SERVER_CERT=false #NOVO
-      - SERVER_SSL_CERTIFICATE=config/certs/kibana/kibana.crt #NOVO
-      - SERVER_SSL_KEY=config/certs/kibana/kibana.key #NOVO
-      - SERVER_SSL_ENABLED=true #NOVO
-    mem_limit: 1gb #NOVO
+      - ELASTIC_APM_ACTIVE=false #NEW
+      - ELASTIC_APM_SERVER_URL=https://apm:8200 #NEW
+      - ELASTIC_APM_VERIFY_SERVER_CERT=false #NEW
+      - SERVER_SSL_CERTIFICATE=config/certs/kibana/kibana.crt #NEW
+      - SERVER_SSL_KEY=config/certs/kibana/kibana.key #NEW
+      - SERVER_SSL_ENABLED=true #NEW
+    mem_limit: 1gb #NEW
     healthcheck:
       test:
         [
@@ -140,7 +140,7 @@ services:
       timeout: 10s
       retries: 120
 
-  apm: #NOVO
+  apm: #NEW
     depends_on:
       kibana:
         condition: service_healthy

@@ -1,10 +1,10 @@
 server.host: 0.0.0.0
-server.publicBaseUrl: https://infraops.work
+server.publicBaseUrl: https://infraops.work <---- change me
 status.allowAnonymous: true
 monitoring.ui.container.elasticsearch.enabled: true
 telemetry.enabled: false
-xpack.security.encryptionKey: 7zXm0VADOR2W0SQz5hPI8Y4UFJ6agfuI <---- change me
-xpack.encryptedSavedObjects.encryptionKey: 7zXm0VADOR2W0SQz5hPI8Y4UFJ6agfuI <---- change me
+xpack.security.encryptionKey: 7zXm0VADOR2W0SQz5hPI8Y4UFJ6agfuI <---- change me min-32-byte-long-strong-encryption
+xpack.encryptedSavedObjects.encryptionKey: 7zXm0VADOR2W0SQz5hPI8Y4UFJ6agfuI <---- change me min-32-byte-long-strong-encryption
 
 xpack.fleet.packages:
   - name: apm
